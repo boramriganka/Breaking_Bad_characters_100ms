@@ -1,0 +1,20 @@
+.App{
+    display : grid;
+    place-items: center;
+    height: auto;
+}
+.top{
+    display: flex;
+    flex-direction: column;
+    flex :0.4;
+    align-items: center;
+    justify-content: center;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    flex: 0.6;
+    align-items: center;
+    justify-content: center;
+}
+
