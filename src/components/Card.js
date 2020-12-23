@@ -17,15 +17,18 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   row2: {
-    display: "grid",
-    placeItems: "center",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "start",
     fontSize: theme.spacing(2),
+    marginLeft: theme.spacing(1),
     padding: "0 20px",
     [theme.breakpoints.up("sm")]: {
       display: "flex",
       flexDirection: "column",
-      textAlign: "center",
+      alignItems: "start",
       maxHeight: "600px",
+      marginLeft: theme.spacing(2),
     },
   },
 
@@ -195,10 +198,18 @@ const CardCharacter = ({ item, quotes}) => {
           <span className={classes.text_light}>Status : </span>
           {/* if the person is dead text will be red else green */}
           <span
-            className={item.status === "Deceased" ? classes.dead : classes.alive}
+            className={
+              item.status === "Deceased" ? classes.dead : classes.alive
+            }
           >
             {item.status}
           </span>
+        </h1>
+        <h1 className={classes.h1}>
+          <span className={classes.text_light}>Occupation: </span>
+          {item.occupation.map((item) =>{
+            return(<span>{item}.</span>)
+          })}
         </h1>
       </CardContent>
 
